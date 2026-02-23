@@ -11,6 +11,13 @@ struct WorldClockView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                //Ottawa
+                HStack {
+                    //Left side
+                    VStack {
+                        Text("Today, ")
+                    }
+                }
                 Text("World Clock")
                     .navigationTitle("World Clock")
                     .toolbar {
