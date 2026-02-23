@@ -32,6 +32,8 @@ struct LandingView: View {
                 }
                 .tag(3)
         }
+        .preferredColorScheme(.dark)
+        .tint(.red)
     }
 }
 
