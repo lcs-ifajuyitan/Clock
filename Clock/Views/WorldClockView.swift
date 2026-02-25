@@ -11,24 +11,11 @@ struct WorldClockView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                //Ottawa
-                HStack {
-                    //Left side
-                    VStack {
-                        Text("Today,+0HRS ")
-                        Text("Ottawa")
-                            .font(.system(.largeTitle, design: .default, weight: .thin))
-                    }
-                    
-                    Spacer()
-                    
-                    // Right Side
-                    Text("6:35")
-                        .font(.system(size: 64.0, weight: .thin, design: .default ))
-                    Text("AM")
-                        .font(.system(.largeTitle, design: .default, weight: .thin))
-                }
-            
+                
+                ExtractedView()
+                ExtractedView()
+                ExtractedView()
+
                 Text("World Clock")
                     .navigationTitle("World Clock")
                     .toolbar {
@@ -60,4 +47,26 @@ struct WorldClockView: View {
 
 #Preview {
     LandingView()
+}
+
+struct ExtractedView: View {
+    var body: some View {
+        //Ottawa
+        HStack {
+            //Left side
+            VStack {
+                Text("Today,+0HRS ")
+                Text("Ottawa")
+                    .font(.system(.largeTitle, design: .default, weight: .thin))
+            }
+            
+            Spacer()
+            
+            // Right Side
+            Text("6:35")
+                .font(.system(size: 64.0, weight: .thin, design: .default ))
+            Text("AM")
+                .font(.system(.largeTitle, design: .default, weight: .thin))
+        }
+    }
 }
