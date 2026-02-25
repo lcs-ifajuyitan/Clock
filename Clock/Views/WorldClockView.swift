@@ -15,9 +15,20 @@ struct WorldClockView: View {
                 HStack {
                     //Left side
                     VStack {
-                        Text("Today, ")
+                        Text("Today,+0HRS ")
+                        Text("Ottawa")
+                            .font(.system(.largeTitle, design: .default, weight: .thin))
                     }
+                    
+                    Spacer()
+                    
+                    // Right Side
+                    Text("6:35")
+                        .font(.system(size: 64.0, weight: .thin, design: .default ))
+                    Text("AM")
+                        .font(.system(.largeTitle, design: .default, weight: .thin))
                 }
+            
                 Text("World Clock")
                     .navigationTitle("World Clock")
                     .toolbar {
