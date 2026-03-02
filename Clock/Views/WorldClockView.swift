@@ -12,33 +12,34 @@ struct WorldClockView: View {
         NavigationStack {
             VStack {
                 
-                ExtractedView()
-                ExtractedView()
-                ExtractedView()
+                ExtractedView(timeZoneOffset: "+0", city: "Ottawa", time24h: "07:35")
+                ExtractedView(timeZoneOffset: "+6", city: "Paris", time24h: "13:35")
+                ExtractedView(timeZoneOffset: "+16", city: "Canberra", time24h: "23:35")
 
-                Text("World Clock")
-                    .navigationTitle("World Clock")
-                    .toolbar {
-                        
-                        ToolbarItem(placement: .topBarLeading) {
-                            
-                            Button("Edit") {
-                                // Does nothing right now
-                            }
-                            
-                        }
-                        
-                        ToolbarItem(placement: .topBarLeading) {
-                            
-                            Button {
-                                // Does nothing right now
-                            } label: {
-                                Image(systemName: "plus")
-                            }
-                            
-                        }
-                        
+                
+                    
+            }
+            .navigationTitle("World Clock")
+            .toolbar {
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    
+                    Button("Edit") {
+                        // Does nothing right now
                     }
+                    
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    
+                    Button {
+                        // Does nothing right now
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    
+                }
+                
             }
             
         }
@@ -50,23 +51,33 @@ struct WorldClockView: View {
 }
 
 struct ExtractedView: View {
+    
+    let timeZoneOffset: String
+    let city: String
+    let time24h: String
+    
     var body: some View {
         //Ottawa
         HStack {
             //Left side
-            VStack {
-                Text("Today,+0HRS ")
-                Text("Ottawa")
+            VStack(alignment: .leading) {
+                Text("Today,\(timeZoneOffset)HRS")
+                Text(city)
                     .font(.system(.largeTitle, design: .default, weight: .thin))
             }
             
             Spacer()
             
             // Right Side
-            Text("6:35")
+            Text(time24h)
                 .font(.system(size: 64.0, weight: .thin, design: .default ))
-            Text("AM")
-                .font(.system(.largeTitle, design: .default, weight: .thin))
         }
     }
 }
+
+
+// struct ExtractedView: View{
+   // var body: some View{
+       // code
+  //  }
+//}
